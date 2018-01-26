@@ -15,6 +15,11 @@ select_server.o: select_server.c networking.h
 networking.o: networking.c networking.h
 	gcc -c networking.c
 
+chub: chub.o chub.o
+	gcc -o chub chub.o networking.o
+
+chub.o: chub.c networking.h
+	gcc -c chub.c
 
 clean:
 	rm *.o
