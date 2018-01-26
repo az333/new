@@ -1,5 +1,3 @@
-select: sclient sserver
-
 select_client.o: select_client.c networking.h
 	gcc -c select_client.c
 
@@ -15,6 +13,7 @@ sserver: select_server.o networking.o
 sclient: select_client.o networking.o
 	gcc -o client select_client.o networking.o
 
+select: sclient sserver
 
 clean:
 	rm *.o
